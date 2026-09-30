@@ -31,17 +31,17 @@ NUMBER_EPISODES = 50
 NUM_SAMPLES_EPSD = 100
 
 # Set evaluation topology
-graph_topology = 0 # 0==NSFNET, 1==GEANT2, 2==Small Topology, 3==GBN
+graph_topology = 1 # 0==NSFNET, 1==GEANT2, 2==Small Topology, 3==GBN
 listofDemands = [8, 32, 64]
 
 hparams = {
     'l2': 0.1,
-    'dropout_rate': 0.01,
-    'link_state_dim': 20,
+    'dropout_rate': 0.1,
+    'link_state_dim': 27,
     'readout_units': 35,
     'learning_rate': 0.0001,
     'batch_size': 32,
-    'T': 4, 
+    'T': 7, 
     'num_demands': len(listofDemands)
 }
 

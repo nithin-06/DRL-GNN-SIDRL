@@ -59,7 +59,11 @@ if __name__ == "__main__":
     plt.close()
 
     # Plot Loss evolution
-    ysmoothed = savgol_filter(list_losses, 51, 3)
+    #ysmoothed = savgol_filter(list_losses, 51, 3)
+    if len(list_losses) > 51:
+        ysmoothed = savgol_filter(list_losses, 51, 3)
+    else:
+        ysmoothed = list_losses  # not enough data to smooth yet, just plot raw
     plt.plot(list_losses, color='lightblue')
     plt.plot(ysmoothed)
     plt.xlabel("Batch")
